@@ -40,3 +40,45 @@ CREATE TABLE usuario(
   FOREIGN KEY (id_prestamo) REFERENCES prestamo (id_prestamo)
 
 )
+
+INSERT INTO autor (id_autor, nombre) VALUES
+(1, 'Gabriel García Márquez.'),
+(2, 'Candelario Obeso.'),
+(3, 'Rafael Pombo.'),
+(4, 'Virginia Woolf'),
+(5, 'José Eustasio Rivera');
+
+INSERT INTO libro (id_libro, titulo, editorial, id_autor) VALUES
+(1, 'Base', 'Norma', 1),
+(2, 'De ', 'Norma', 2),
+(3, 'Datos', 'Norma', 3),
+(4, 'Biblioteca', 'Norma', 4),
+(5, 'Primer punto', 'Norma', 5);
+
+INSERT INTO libro_prestamo (id_libro_prestamo, id_prestamo, id_libro) VALUES
+(1, 1, 1),
+(2, 2, 2),
+(3, 3, 3),
+(4, 4, 4),
+(5, 5, 5);
+
+INSERT INTO multa (id_multa, penalizacion) VALUES
+(1, 10),
+(2, 11),
+(3, 12),
+(4, 13),
+(5, 14);
+
+INSERT INTO prestamo (id_prestamo, diashabiles, id_multa) VALUES
+(1, 5, 1),
+(2, 5, 2),
+(3, 5, 3),
+(4, 5, 4),
+(5, 5, 5);
+
+INSERT INTO usuario (id_usuario, nombre_usuario, edad, numero_cont, id_prestamo) VALUES
+(1, 'Felipe', 20, 123, 1),
+(2, 'Diego', 18, 344, 2),
+(3, 'Willian', 18, 356, 3),
+(4, 'Nicol', 21, 321, 4),
+(5, 'Kaleft', 19, 395, 5);
