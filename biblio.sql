@@ -82,3 +82,23 @@ INSERT INTO usuario (id_usuario, nombre_usuario, edad, numero_cont, id_prestamo)
 (3, 'Willian', 18, 356, 3),
 (4, 'Nicol', 21, 321, 4),
 (5, 'Kaleft', 19, 395, 5);
+
+UPDATE autor SET nombre = 'Juan' WHERE id_autor = 1;
+UPDATE autor SET nombre = 'Dani' WHERE id_autor = 2;
+UPDATE autor SET nombre = 'Teo' WHERE id_autor = 3;
+UPDATE autor SET nombre = 'Kin' WHERE id_autor = 4;
+UPDATE autor SET nombre = 'Fun' WHERE id_autor = 5;
+
+UPDATE libro SET titulo = 'Coco' WHERE id_libro = 1;
+UPDATE libro SET titulo = 'Fresa' WHERE id_libro = 2;
+UPDATE libro SET titulo = 'Mango' WHERE id_libro = 3;
+UPDATE libro SET titulo = 'Manzana' WHERE id_libro = 4;
+UPDATE libro SET titulo = 'Pera' WHERE id_libro = 5;
+
+UPDATE libro_prestamo SET id_libro_prestamo = 25 WHERE id_libro = 1;
+UPDATE libro_prestamo SET id_libro_prestamo = 24 WHERE id_libro = 2;
+UPDATE libro_prestamo SET id_libro_prestamo = 22 WHERE id_libro = 3;
+UPDATE libro_prestamo SET id_libro_prestamo = 10 WHERE id_libro = 4;
+UPDATE libro_prestamo SET id_libro_prestamo = 12 WHERE id_libro = 5;
+
+
