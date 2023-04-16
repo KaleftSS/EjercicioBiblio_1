@@ -8,14 +8,14 @@ CREATE TABLE libro (
   titulo varchar(20) DEFAULT NULL,
   editorial varchar(20) DEFAULT NULL,
   id_autor int(11) DEFAULT NULL,
-  FOREIGN KEY (id_autor) REFERENCES autor(id_autor)
+  FOREIGN KEY (id_autor) REFERENCES autor(id_autor) ON DELETE CASCADE
 );
 
 CREATE TABLE libro_prestamo (
   id_libro_prestamo int(20) PRIMARY KEY NOT NULL,
   id_prestamo int(11) DEFAULT NULL,
   id_libro int(11) DEFAULT NULL,
-  FOREIGN KEY (id_libro) REFERENCES libro (id_libro)
+  FOREIGN KEY (id_libro) REFERENCES libro (id_libro) ON DELETE CASCADE
 
 );
 
@@ -28,7 +28,7 @@ CREATE TABLE prestamo (
   id_prestamo int(20) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   diashabiles int(20) DEFAULT NULL,
   id_multa int(11) DEFAULT NULL,
-  FOREIGN KEY (id_multa) REFERENCES multa (id_multa)
+  FOREIGN KEY (id_multa) REFERENCES multa (id_multa) ON DELETE CASCADE
 );
 
 CREATE TABLE usuario(
@@ -37,7 +37,7 @@ CREATE TABLE usuario(
   edad int(3) DEFAULT NULL,
   numero_cont int(10) DEFAULT NULL,
   id_prestamo int(11) DEFAULT NULL,
-  FOREIGN KEY (id_prestamo) REFERENCES prestamo (id_prestamo)
+  FOREIGN KEY (id_prestamo) REFERENCES prestamo (id_prestamo) ON DELETE CASCADE
 
 )
 
@@ -101,4 +101,8 @@ UPDATE libro_prestamo SET id_libro_prestamo = 22 WHERE id_libro = 3;
 UPDATE libro_prestamo SET id_libro_prestamo = 10 WHERE id_libro = 4;
 UPDATE libro_prestamo SET id_libro_prestamo = 12 WHERE id_libro = 5;
 
-
+DELETE FROM autor WHERE id_autor = 1;
+DELETE FROM autor WHERE id_autor = 2;
+DELETE FROM autor WHERE id_autor = 3;
+DELETE FROM autor WHERE id_autor = 4;
+DELETE FROM autor WHERE id_autor = 5;
